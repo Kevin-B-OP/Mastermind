@@ -16,7 +16,7 @@ public class Propertiescreation {
                 prop.setProperty("nbtries", "5");
                 prop.setProperty("maxcasesM", "10");
                 prop.setProperty("mincasesM","4");
-                prop.store(output, int);
+                prop.store(output, (String)null);
                 System.out.println(prop);
             } catch (Throwable var5) {
                 try {
