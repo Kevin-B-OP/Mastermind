@@ -1,7 +1,7 @@
 package com.opckev.Fonctionnement1.JeuxEtMode.PouM;
 
 import com.opckev.Fonctionnement1.Appli;
-import com.opckev.Fonctionnement1.ConsoleUtils;
+import com.opckev.Fonctionnement1.JeuxEtMode.Utils.ConsoleUtils;
 
 public class PouMChallenger {
     public void mode1 (){

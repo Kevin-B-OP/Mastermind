@@ -1,7 +1,7 @@
 package com.opckev.Fonctionnement1.JeuxEtMode.Mastermind;
 
 import com.opckev.Fonctionnement1.Appli;
-import com.opckev.Fonctionnement1.ConsoleUtils;
+import com.opckev.Fonctionnement1.JeuxEtMode.Utils.ConsoleUtils;
 
 public class MastermindDuel {
     public void mode6 (){

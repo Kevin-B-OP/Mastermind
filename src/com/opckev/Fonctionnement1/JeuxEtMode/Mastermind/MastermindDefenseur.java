@@ -1,7 +1,8 @@
 package com.opckev.Fonctionnement1.JeuxEtMode.Mastermind;
 
 import com.opckev.Fonctionnement1.Appli;
-import com.opckev.Fonctionnement1.ConsoleUtils;
+import com.opckev.Fonctionnement1.JeuxEtMode.Utils.FinUtils;
+import com.opckev.Fonctionnement1.JeuxEtMode.Utils.NumberUtils;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -10,9 +11,9 @@ public class MastermindDefenseur {
     Scanner sc = new Scanner (System.in);
     int scoreOrdi = 0;
     public void mode5 () {
-        final int NB_CHIFFRES = 4;
+        final int NB_CHIFFRES = NumberUtils.min();
         final int MAX = 9;
-        final int ESSAIS_MAX = 10;
+        final int ESSAIS_MAX = NumberUtils.essai();
 
         final int[] solution = new int[NB_CHIFFRES];
 
@@ -71,13 +72,9 @@ public class MastermindDefenseur {
         System.out.println(" ");
         fin();
     }
-        public void fin() {
+    public void fin() {
         //Menu de fin de jeu
-        System.out.println("Que souhaitez vous faire maintenant ?");
-        System.out.println("1 - Rejouer une partie");
-        System.out.println("2 - Revenir au menu de sélection");
-        System.out.print("3 - Quitter l'application");
-        int nbfin5= ConsoleUtils.afficherMenu("",3);
+        int nbfin5= FinUtils.finMenu();
         System.out.println(" ");
         if (nbfin5==1){
             System.out.println(" ");

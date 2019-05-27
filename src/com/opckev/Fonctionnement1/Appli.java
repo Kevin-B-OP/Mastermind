@@ -6,16 +6,17 @@ import com.opckev.Fonctionnement1.JeuxEtMode.Mastermind.MastermindDuel;
 import com.opckev.Fonctionnement1.JeuxEtMode.PouM.PouMChallenger;
 import com.opckev.Fonctionnement1.JeuxEtMode.PouM.PouMDefenseur;
 import com.opckev.Fonctionnement1.JeuxEtMode.PouM.PouMDuel;
+import com.opckev.Fonctionnement1.JeuxEtMode.Utils.ConsoleUtils;
 
 public class Appli {
 
-    public void partieUn(){
+    public static void partieUn(){
         System.out.println("Bonjour et bienvenue sur cette plateforme de jeux");
         System.out.println("Que souhaitez vous faire ?");
         System.out.println("1 - Jouer au + ou -");
         System.out.println("2 - Jouer au Mastermind");
         System.out.print("3 - Sortir de l'application");
-        int nbresponse=ConsoleUtils.afficherMenu("",3);
+        int nbresponse= ConsoleUtils.afficherMenu("",3);
         System.out.println(" ");
         if (nbresponse==1){
             System.out.println("A quel mode de jeu voulez vous jouer ?");

@@ -1,22 +1,26 @@
 package com.opckev.Fonctionnement1.JeuxEtMode.Mastermind;
 
 import com.opckev.Fonctionnement1.Appli;
-import com.opckev.Fonctionnement1.ConsoleUtils;
+import com.opckev.Fonctionnement1.JeuxEtMode.Utils.FinUtils;
+import com.opckev.Fonctionnement1.JeuxEtMode.Utils.NumberUtils;
+
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class MastermindChallenger {
-    private static final char OK = 'o';
-    private static final char FAUX = 'x';
+
     Scanner sc = new Scanner (System.in);
     int scoreJoueur = 0;
 
     public void mode4 (){
 
-        final int NB_CHIFFRES = 4;
+        int nbMax= NumberUtils.max();
+        int nbMin = NumberUtils.min();
+        int ESSAIS_MAX=NumberUtils.essai();
+
+        final int NB_CHIFFRES = (int) (Math.random() * (nbMax - nbMin)) + nbMin;
         final int MAX = 9;
-        final int ESSAIS_MAX = 10;
 
         final int[] solution = new int[NB_CHIFFRES];
 
@@ -47,13 +51,11 @@ public class MastermindChallenger {
             victoire = true;
             for(int i=0 ; i<NB_CHIFFRES ; i++) {
                 boolean bonChiffre = chiffres[i] == solution[i];
-                boolean presentChiffre = chiffres== solution;
+
                 if (bonChiffre) {
                     vrai++;
                 }
-                else if (presentChiffre) {
-                    present++;
-                }
+
 
                 victoire = victoire && bonChiffre; //
             }
@@ -75,18 +77,14 @@ public class MastermindChallenger {
         System.out.println(" ");
 
         //Menu de fin de jeu
-        System.out.println("Que souhaitez vous faire maintenant ?");
-        System.out.println("1 - Rejouer une partie");
-        System.out.println("2 - Revenir au menu de sélection");
-        System.out.print("3 - Quitter l'application");
-        int nbfin4= ConsoleUtils.afficherMenu("",3);
+
+        int nbfin4= FinUtils.finMenu();
         System.out.println(" ");
         if (nbfin4==1){
             mode4();
         }
         else if (nbfin4==2){
-            Appli Menu = new Appli();
-            Menu.partieUn();
+            Appli.partieUn();
         }
         else {
             System.out.println("Au revoir");
