@@ -1,9 +1,8 @@
 package com.opckev.Fonctionnement1.JeuxEtMode.Mastermind;
-
 import com.opckev.Fonctionnement1.Appli;
+import com.opckev.Fonctionnement1.JeuxEtMode.Utils.AskNumberUtils;
 import com.opckev.Fonctionnement1.JeuxEtMode.Utils.FinUtils;
 import com.opckev.Fonctionnement1.JeuxEtMode.Utils.NumberUtils;
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,12 +10,15 @@ public class MastermindDefenseur {
     Scanner sc = new Scanner (System.in);
     int scoreOrdi = 0;
     public void mode5 () {
-        final int NB_CHIFFRES = NumberUtils.min();
+
+        int ESSAIS_MAX=NumberUtils.essai();
         final int MAX = 9;
-        final int ESSAIS_MAX = NumberUtils.essai();
+        //Le choix de la taille du nombre est définie par le joueur qui devra choisir entre les deux valeurs extrêmes
+        int NB_CHIFFRES= AskNumberUtils.mastermind();
 
         final int[] solution = new int[NB_CHIFFRES];
 
+        //Permet au joueur de donner son chiffre
         System.out.println("Quel chiffre proposez vous en challenge à l'ordinateur ?");
         int nombreSaisi = sc.nextInt();
 
